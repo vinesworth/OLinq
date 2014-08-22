@@ -15,6 +15,15 @@ namespace OLinq.Tests
         T value3;
         T value4;
 
+        public NotificationObject(T value1 = default(T), T value2 = default(T),
+                                  T value3 = default(T), T value4 = default(T))
+        {
+            Value1 = value1;
+            Value2 = value2;
+            Value3 = value3;
+            Value4 = value4;
+        }
+
         public T Value1
         {
             get { return value1; }
