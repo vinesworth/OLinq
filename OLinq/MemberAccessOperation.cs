@@ -126,7 +126,8 @@ namespace OLinq
             if (member is FieldInfo)
                 return ((FieldInfo)member).IsStatic;
             else if (member is PropertyInfo)
-                return (((PropertyInfo)member)).GetGetMethod().IsStatic;
+                return (   ((PropertyInfo)member).GetGetMethod()
+                        ?? ((PropertyInfo)member).GetGetMethod(true)).IsStatic;
             else
                 throw new ArgumentException("Member is not of a known type.");
         }
